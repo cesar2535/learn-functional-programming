@@ -102,3 +102,26 @@
  *  » To verify your program, run: functional-javascript verify program.js
  *  » For help run: functional-javascript help
  */
+
+module.exports = function duckCount() {
+  var args = Array.prototype.slice.call(arguments, 0);
+  return args.reduce(function (map, current) {
+    return (Object.prototype.hasOwnProperty.call(current, 'quack')) ? map += 1 : map += 0;
+  }, 0);
+};
+
+/**
+ *  Here's the official solution in case you want to compare notes:
+ *
+ *  ────────────────────────────────────────────────────────────────────────────────
+ *      function duckCount() {
+ *        return Array.prototype.slice.call(arguments).filter(function(obj) {
+ *          return Object.prototype.hasOwnProperty.call(obj, 'quack')
+ *        }).length
+ *      }
+ *
+ *      module.exports = duckCount
+ *
+ *  ────────────────────────────────────────────────────────────────────────────────
+ *
+ */
