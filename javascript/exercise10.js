@@ -51,3 +51,19 @@
  *  » To verify your program, run: functional-javascript verify program.js
  *  » For help run: functional-javascript help
  */
+
+module.exports = function (namespace) {
+  return console.log.bind(console, namespace);
+};
+
+/**
+ *  Here's the official solution in case you want to compare notes:
+ *
+ *  ────────────────────────────────────────────────────────────────────────────────
+ *      module.exports = function(namespace) {
+ *        return console.log.bind(console, namespace)
+ *      }
+ *
+ *  ────────────────────────────────────────────────────────────────────────────────
+ *
+ */
